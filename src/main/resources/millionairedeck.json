@@ -1,0 +1,412 @@
+{
+  "version": 2,
+  "requiredMods": ["Millionaire"],
+  "rules": {
+    "movesPerTurn": 3,
+    "allowUndo": true,
+    "cardsDealt": 5,
+    "cardsDrawnPerTurn": 2,
+    "winCondition": {"money": 20},
+    "maxCardsInHand": 7,
+    "discardRules": {
+      "discardOrder": "MoneyActionFirst",
+      "canDiscardEarly": true
+    },
+    "modRules": {"Millionaire": {"payMoneyFirst": true}},
+    "cardRules": {
+      "rent": {
+        "allowMultipleModifiers": false,
+        "multiColorRentChargesAll": false,
+        "twoColorRentChargesAll": true
+      },
+      "dealBreaker": {"dealBreakersDiscardSets": false},
+      "doubleTheRent": {"doubleRule": "Multiply"}
+    },
+    "bankRules": {
+      "canBankActionCards": false,
+      "canBankPropertyCards": false
+    },
+    "emptyHandRules": {
+      "extraCardsDrawn": 5,
+      "drawExtraCards": "NextDraw"
+    }
+  },
+  "cards": [
+    {
+      "type": "money",
+      "value": 1,
+      "innerColor": "#BEA4C4",
+      "description": ["Money is the objective. The first player to have 20M total in their bank wins the game. Be careful, you must pay rent with money before properties!"],
+      "amount": 16
+    },
+    {
+      "type": "money",
+      "value": 2,
+      "innerColor": "#F2E146",
+      "description": ["Money is the objective. The first player to have 20M total in their bank wins the game. Be careful, you must pay rent with money before properties!"],
+      "amount": 15
+    },
+    {
+      "type": "debtCollector",
+      "value": 0,
+      "description": ["Select a player and charge 6M against them."],
+      "innerColor": "$3",
+      "charge": 6,
+      "amount": 4
+    },
+    {
+      "type": "doubleTheRent",
+      "value": 0,
+      "innerColor": "$1",
+      "amount": 2
+    },
+    {
+      "type": "dealBreaker",
+      "value": 0,
+      "innerColor": "$3",
+      "amount": 2
+    },
+    {
+      "type": "forcedDeal",
+      "value": 0,
+      "innerColor": "$3",
+      "amount": 2
+    },
+    {
+      "type": "itsMyBirthday",
+      "value": 0,
+      "description": ["Charge all other players 1M."],
+      "innerColor": "$2",
+      "charge": 1,
+      "amount": 4
+    },
+    {
+      "type": "justSayNo",
+      "value": 0,
+      "innerColor": "$4",
+      "amount": 3
+    },
+    {
+      "type": "passGo",
+      "value": 0,
+      "innerColor": "$1",
+      "amount": 6
+    },
+    {
+      "type": "rent",
+      "value": 0,
+      "name": "Brown/Light Blue Rent",
+      "innerColor": "$2",
+      "colors": [
+        "Millionaire Brown",
+        "Millionaire Light Blue"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "rent",
+      "value": 0,
+      "innerColor": "$3",
+      "colors": [
+        "Millionaire Brown",
+        "Millionaire Light Blue",
+        "Millionaire Magenta",
+        "Millionaire Orange",
+        "Millionaire Red",
+        "Millionaire Yellow",
+        "Millionaire Green",
+        "Millionaire Dark Blue"
+      ],
+      "amount": 3
+    },
+    {
+      "type": "rent",
+      "value": 0,
+      "name": "Gold Rent",
+      "playAnimation": "Important",
+      "innerColor": "$10",
+      "chargesAll": false,
+      "colors": ["Millionaire Gold"],
+      "amount": 2
+    },
+    {
+      "type": "raceAhead",
+      "template": "Valueless",
+      "amount": 2
+    },
+    {
+      "type": "rent",
+      "value": 0,
+      "name": "Magenta/Orange Rent",
+      "innerColor": "$2",
+      "colors": [
+        "Millionaire Magenta",
+        "Millionaire Orange"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "rent",
+      "value": 0,
+      "name": "Green/Dark Blue Rent",
+      "innerColor": "$2",
+      "colors": [
+        "Millionaire Green",
+        "Millionaire Dark Blue"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "rent",
+      "value": 0,
+      "name": "Red/Yellow Rent",
+      "innerColor": "$2",
+      "colors": [
+        "Millionaire Red",
+        "Millionaire Yellow"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "slyDeal",
+      "value": 0,
+      "innerColor": "$3",
+      "amount": 2
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Movie District",
+      "base": true,
+      "colors": ["Millionaire Orange"]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Bling Beach",
+      "base": true,
+      "colors": ["Millionaire Yellow"]
+    },
+    {
+      "type": "property",
+      "value": 1,
+      "name": "Property Wild Card",
+      "base": true,
+      "colors": [
+        "Millionaire Brown",
+        "Millionaire Light Blue"
+      ]
+    },
+    {
+      "type": "property",
+      "value": 1,
+      "name": "Gadget Warf",
+      "base": true,
+      "colors": ["Millionaire Brown"]
+    },
+    {
+      "type": "property",
+      "value": 1,
+      "name": "Motor Drive",
+      "base": true,
+      "colors": ["Millionaire Brown"]
+    },
+    {
+      "type": "property",
+      "value": 4,
+      "name": "Paradise Island",
+      "base": true,
+      "colors": ["Millionaire Dark Blue"]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Style Square",
+      "base": true,
+      "colors": ["Millionaire Red"]
+    },
+    {
+      "type": "property",
+      "value": 4,
+      "name": "Fortune Valley",
+      "base": true,
+      "colors": ["Millionaire Dark Blue"]
+    },
+    {
+      "type": "property",
+      "value": 4,
+      "name": "Ski Mountain",
+      "base": true,
+      "colors": ["Millionaire Green"]
+    },
+    {
+      "type": "property",
+      "value": 4,
+      "name": "Treetop Retreat",
+      "base": true,
+      "colors": ["Millionaire Green"]
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Property Wild Card",
+      "base": true,
+      "colors": [
+        "Millionaire Magenta",
+        "Millionaire Orange"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "property",
+      "value": 1,
+      "name": "Aqua Park Resort",
+      "base": true,
+      "colors": ["Millionaire Light Blue"]
+    },
+    {
+      "type": "property",
+      "value": 4,
+      "name": "Diamond Hills",
+      "base": true,
+      "colors": ["Millionaire Green"]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Party Plaza",
+      "base": true,
+      "colors": ["Millionaire Red"]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Property Wild Card",
+      "base": true,
+      "colors": [
+        "Millionaire Red",
+        "Millionaire Yellow"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "property",
+      "value": 1,
+      "name": "Lakeside Marina",
+      "base": true,
+      "colors": ["Millionaire Light Blue"]
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Dream Avenue",
+      "base": true,
+      "colors": ["Millionaire Magenta"]
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Castle View",
+      "base": true,
+      "colors": ["Millionaire Magenta"]
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Themepark City",
+      "base": true,
+      "colors": ["Millionaire Orange"]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Yacht Harbor",
+      "base": true,
+      "colors": ["Millionaire Yellow"]
+    },
+    {
+      "type": "property",
+      "value": 0,
+      "name": "Property Wild Card",
+      "description": ["A property card that can be paired with any color except Gold. It cannot be used for rent if you don't have another property with the color. This card cannot be taken by rent."],
+      "base": false,
+      "colors": [
+        "Millionaire Brown",
+        "Millionaire Light Blue",
+        "Millionaire Magenta",
+        "Millionaire Orange",
+        "Millionaire Red",
+        "Millionaire Yellow",
+        "Millionaire Green",
+        "Millionaire Dark Blue"
+      ],
+      "amount": 2
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Adventure Park",
+      "base": true,
+      "colors": ["Millionaire Orange"]
+    },
+    {
+      "type": "property",
+      "value": 1,
+      "name": "Surfer's Cove",
+      "base": true,
+      "colors": ["Millionaire Light Blue"]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Sunshine Bay",
+      "base": true,
+      "colors": ["Millionaire Yellow"]
+    },
+    {
+      "type": "property",
+      "value": 2,
+      "name": "Palace Gardens",
+      "base": true,
+      "colors": ["Millionaire Magenta"]
+    },
+    {
+      "type": "property",
+      "value": 10,
+      "name": "Millionaire Valley",
+      "base": true,
+      "colors": ["Millionaire Gold"]
+    },
+    {
+      "type": "property",
+      "value": 4,
+      "name": "Property Wild Card",
+      "base": true,
+      "colors": [
+        "Millionaire Green",
+        "Millionaire Dark Blue"
+      ]
+    },
+    {
+      "type": "property",
+      "value": 3,
+      "name": "Showtime Boulevard",
+      "base": true,
+      "colors": ["Millionaire Red"]
+    },
+    {
+      "type": "property",
+      "value": 10,
+      "name": "Crystal Coast",
+      "base": true,
+      "colors": ["Millionaire Gold"]
+    },
+    {
+      "type": "property",
+      "value": 10,
+      "name": "Gold Island",
+      "base": true,
+      "colors": ["Millionaire Gold"]
+    }
+  ]
+}
